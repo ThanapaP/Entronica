@@ -1,0 +1,15 @@
+<div class="body">
+  <div class="container mt-5">
+    <h1>All User</h1>
+    <hr />
+    <div
+      [ngClass]="{ 'selected-user': selectedUser?._id === user._id }"
+      *ngFor="let user of users"
+      (click)="onSelected(user)"
+    >
+      <div class="detail" >user: {{ user.username }}</div>
+    </div>
+  </div>
+
+
+</div>

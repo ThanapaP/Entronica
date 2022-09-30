@@ -1,0 +1,22 @@
+<div class="body">
+  <div class="container mt-5">
+    <h1>All User</h1>
+    <hr />
+    <div
+      [ngClass]="{ 'selected-user': selectedUser?._id === user._id }"
+      *ngFor="let user of users"
+      (click)="onSelected(user)"
+    >
+      <div class="detail" >user: {{ user.username }}</div>
+    </div>
+  </div>
+
+  <div class="container mt-5" *ngIf="selectedUser">
+    <h1>User Details</h1>
+    <hr />
+    <div class="p2">Name: {{ selectedUser.username }}</div>
+    <div class="p2">Age: {{ selectedUser.age }}</div>
+    <div class="p2">Mobile No: {{ selectedUser.phone }}</div>
+    <div class="p2">Email: {{ selectedUser.email }}</div>
+  </div>
+</div>

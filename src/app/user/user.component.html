@@ -1,0 +1,7 @@
+<div class="container mt-5">
+  <ea-user-list [users]="allUser" (onSelectUser)="onSelected($event)"></ea-user-list>
+  <ea-user-detail [selectedUser]="selectedUser"></ea-user-detail>
+</div>
+
+<!-- <p>{{allUser | json}}</p> -->
+

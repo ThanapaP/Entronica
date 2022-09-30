@@ -1,0 +1,83 @@
+<div class="container">
+  <h3>Registration</h3>
+  <br />
+  <form (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
+    <div class="form-group p-2">
+      Username
+      <input
+        type="text"
+        [ngClass]="{
+          error: isSubmitted && registrationForm.controls['username'].invalid
+        }"
+        class="form-control"
+        formControlName="username"
+      />
+    </div>
+    <div class="form-group p-2">
+      Password
+      <input
+        type="password"
+        [ngClass]="{
+          error: isSubmitted && registrationForm.controls['password'].invalid
+        }"
+        class="form-control"
+        formControlName="password"
+      />
+    </div>
+    <div class="form-group p-2">
+      name
+      <input
+        type="text"
+        [ngClass]="{
+          error: isSubmitted && registrationForm.controls['name'].invalid
+        }"
+        class="form-control"
+        formControlName="name"
+      />
+    </div>
+    <div class="form-group p-2">
+      Age
+      <input
+        type="text"
+        [ngClass]="{
+          error: isSubmitted && registrationForm.controls['age'].invalid
+        }"
+        class="form-control"
+        formControlName="age"
+      />
+    </div>
+    <div class="form-group p-2">
+      Mobile No.
+      <input
+        type="text"
+        [ngClass]="{
+          error: isSubmitted && registrationForm.controls['mobileno'].invalid
+        }"
+        class="form-control"
+        formControlName="mobileno"
+      />
+    </div>
+    <div class="form-group p-2">
+      Email
+      <input
+        type="text"
+        [ngClass]="{
+          error: isSubmitted && registrationForm.controls['email'].invalid
+        }"
+        class="form-control"
+        formControlName="email"
+      />
+    </div>
+    <button class="btn btn-primary" type="submit">Sign up</button>
+  </form>
+
+  <div class="container mt-3" *ngIf="isSuccess">
+    <h3>Register Success</h3>
+    <div class="p2">Userame: {{ registrationForm.value.username }}</div>
+    <div class="p2">Full Name: {{ registrationForm.value.fullname }}</div>
+    <div class="p2">Age: {{ registrationForm.value.age }}</div>
+    <div class="p2">Mobile No: {{ registrationForm.value.mobileno }}</div>
+    <div class="p2">Email: {{ registrationForm.value.email }}</div>
+    <br />
+  </div>
+</div>
